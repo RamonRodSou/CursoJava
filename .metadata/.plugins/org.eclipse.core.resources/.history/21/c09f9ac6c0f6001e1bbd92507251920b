@@ -1,0 +1,18 @@
+package fundamentos;
+
+public class TipoString {
+
+	public static void main(String[] args) {
+		msg("Olá pessoal".charAt(2)); // pegar o 2 character 
+		
+		String s = "Boa tarde";
+		msg(s.concat("!!!!"));
+		
+	}
+	
+	static void msg(String texto) {
+		System.out.println(texto);
+	};
+};
+
+

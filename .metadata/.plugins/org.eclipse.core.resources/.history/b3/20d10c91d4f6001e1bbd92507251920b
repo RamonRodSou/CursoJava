@@ -1,0 +1,13 @@
+package fundamentos;
+
+public class Console {
+	
+	public static void main(String[] args) {
+	
+	// Jogar Dados no Console
+		
+		System.out.print("Bom");
+		System.out.println(" dia! \n\n");
+		
+	}
+}
