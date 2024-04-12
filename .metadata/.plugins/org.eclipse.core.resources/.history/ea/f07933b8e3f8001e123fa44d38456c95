@@ -1,0 +1,19 @@
+package fundamentos;
+
+public class Wrapper {
+
+	public static void main(String[] args) {
+		
+		// Versao Orientada a Objeto dos tipos primitivos
+
+		//byte
+		Byte b = 100;
+		Short s = 1000;
+		
+		System.out.println(b.byteValue());
+		System.out.println(s.TYPE);
+		System.out.println(s.toString();
+	}
+	
+}
+ 

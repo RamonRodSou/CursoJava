@@ -1,0 +1,22 @@
+package fundamentos;
+
+public class ConversaoTipoPrimitivoNumerico {
+
+	public static void main(String[] args) {
+		
+		double a = 1;
+		System.out.println(a);
+		
+		double aa = 1.123456789999;
+		;
+		System.out.println(aa);
+		
+		float b = (float) 1.123456789999; // explicita ( CAST )
+		System.out.println(b);
+		
+		
+		int c = 127; 
+		byte d = (byte) c; // vai dar um numero negativo pq ele chega no ultimo numero que o byte suporta 
+		System.out.println(d);
+	}
+}
