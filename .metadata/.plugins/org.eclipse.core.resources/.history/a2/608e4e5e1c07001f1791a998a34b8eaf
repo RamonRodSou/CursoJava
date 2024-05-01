@@ -1,0 +1,18 @@
+package operadores;
+
+public class Ternario {
+	
+	public static void main(String[] args) {
+		
+		double media = 5.6;
+		String resultadoParcial = media >= 5.5 ? "em recuperacao" : "reprovado";
+		
+		
+		String resultado = media >= 7.0 ? 
+				"Aprovado" : "Recuperacao";
+		
+		System.out.println(resultado);
+		
+	}
+
+}

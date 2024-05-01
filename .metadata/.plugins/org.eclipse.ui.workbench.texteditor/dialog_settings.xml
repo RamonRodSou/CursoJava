@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="&#x09;&#x09;System.out.printf(&quot;O senhor s% s% tem %d anos&quot;,nome, sobreNome, idade );"/>
+		<item key="selection" value="&#x09;&#x09;int a = 3 * 4 - 10;"/>
 		<list key="findhistory">
+			<item value="&#x09;&#x09;int a = 3 * 4 - 10;"/>
 			<item value="&#x09;&#x09;System.out.printf(&quot;O senhor s% s% tem %d anos&quot;,nome, sobreNome, idade );"/>
 			<item value=""/>
 		</list>
