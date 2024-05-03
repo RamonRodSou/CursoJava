@@ -18,7 +18,7 @@ public class CalcularATemperatura {
 		celsius = ( fahrenheit - TRINTAEDOIS ) * CINDODIVNOVE;
 		
 		System.out.println(fahrenheit + " fahrenheit para celsius é igual a: " + celsius);
-		
+
 	}
 
 }

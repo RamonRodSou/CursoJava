@@ -30,6 +30,9 @@ public class DesafioConversao {
 		
 		System.out.println("Soma = " + soma);
 		System.out.println("Média = " + media);
+		
+		entrada.close();
 	}
+	
 
 }
