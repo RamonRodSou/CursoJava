@@ -79,4 +79,12 @@
 		<item key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_USE_PERSISTED_SIZE" value="true"/>
 		<item key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_USE_PERSISTED_LOCATION" value="false"/>
 	</section>
+	<section name="nls_accessor_history">
+		<section name="0">
+			<item key="accessorName" value="Messages"/>
+			<item key="accessorPackage" value="=exercicios/src&lt;classe"/>
+			<item key="bundleName" value="messages.properties"/>
+			<item key="bundlePackage" value="=exercicios/src&lt;classe"/>
+		</section>
+	</section>
 </section>

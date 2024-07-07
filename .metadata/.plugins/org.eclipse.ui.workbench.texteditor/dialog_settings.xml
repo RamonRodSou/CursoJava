@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="&#x09;&#x09;default:"/>
+		<item key="selection" value="p1.nome = &quot;sapato&quot;;"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="p1.nome = &quot;sapato&quot;;"/>
 			<item value="&#x09;&#x09;default:"/>
 			<item value="&#x09;&#x09;while( valor != minimo) {"/>
 			<item value="&#x09;&#x09;String valor = &quot;#&quot;;"/>
@@ -15,7 +16,6 @@
 			<item value="&#x0D;&#x0A;&#x09;&#x09;double notas = 0;&#x0D;&#x0A;&#x09;&#x09;double contador = 1;&#x0D;&#x0A;&#x09;&#x09;&#x0D;&#x0A;&#x09;&#x09;while(notas != (-1)) {&#x0D;&#x0A;&#x09;&#x09;&#x09;&#x0D;&#x0A;&#x09;&#x09;&#x09;System.out.print(&quot;Digite uma nota: &quot;);&#x0D;&#x0A;&#x09;&#x09;&#x09;&#x0D;&#x0A;&#x09;&#x09;&#x09;if(!(notas &gt;= 0 || notas &lt;= 10)) {&#x0D;&#x0A;&#x09;&#x09;&#x09;&#x09;&#x0D;&#x0A;&#x09;&#x09;&#x09;&#x09;System.out.print(&quot;Digite uma nota valida de 0 a 10: &quot;);&#x0D;&#x0A;&#x09;&#x09;&#x09;}&#x0D;&#x0A;&#x09;&#x09;&#x09;System.out.println(contador);&#x0D;&#x0A;&#x09;&#x09;&#x09;contador++;&#x0D;&#x0A;&#x09;&#x09;}&#x0D;&#x0A;&#x0D;&#x0A;&#x09;&#x09;entrada.close();&#x0D;&#x0A;&#x09;}"/>
 			<item value="&#x09;&#x09;&#x09;System.out.print(&quot;Digite uma nota valida de 0 a 10: &quot;);"/>
 			<item value="&#x09;&#x09;int x = 2;"/>
-			<item value="&#x09;int x = 2;"/>
 		</list>
 		<list key="replacehistory">
 		</list>

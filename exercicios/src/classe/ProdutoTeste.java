@@ -3,12 +3,8 @@ package classe;
 public class ProdutoTeste {
 	public static void main(String[] args) {
 		
-		Produto p1 = new Produto();
-		p1.nome = "sapato";
-		p1.preco = 100.99;
-		p1.desconto = 0.24;
+		Produto p1 = new Produto("sapato", 100.99, 0.24);
 
-		
 		var p2 = new Produto();
 		p2.nome = "camisa";
 		p2.preco = 140.99;
