@@ -6,14 +6,26 @@ public class Data {
 	int mes;
 	int ano;
 	
+	Data () {
+		dia = 01;
+		mes = 01;
+		ano = 1970;
+	}
+	
+	Data (int diaInicial, int mesInicial, int anoInicial) {
+		dia = diaInicial ;
+		mes = mesInicial;
+		ano = anoInicial;
+	}
+	
 	//Melhor opcao!
 	String dataFormatada() {
-		return String.format("Sua data é %d/%d/%d",dia, mes, ano);
+		return String.format("Data:  %d/%d/%d",dia, mes, ano);
 	}
 	
 	// Vai exibir apenas no terminal do sistema
 	void obterDataFormatada() {
-		System.out.printf("Sua data é %d/%d/%d \n",dia, mes, ano);
+		System.out.printf("Data:  %d/%d/%d \n",dia, mes, ano);
 	}
 	
 	// Vai exibir apenas no terminal do sistema
