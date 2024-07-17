@@ -1,0 +1,6 @@
+Erros:
+RunTime -  erro que só vai acontecer quando o código estiver sendo executado
+
+Copilacao - erro que se tentar copilar um arquivo .java para classe nao vai conseguir. pq tem um erro de código/ regra da linguagem violada
+
+java.long.NullPointerExcepetion - erro de RunTime, significa que a variável ou Objeto, nao tem endereço de memoria, logo nao ta apontando para nada, um valor NULL
