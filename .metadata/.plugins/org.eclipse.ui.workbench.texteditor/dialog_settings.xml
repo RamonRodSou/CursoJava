@@ -8,6 +8,7 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="notas"/>
 			<item value="&#x09;Data (int diaInicial, int mesInicial, int anoInicial) {"/>
 			<item value="&#x09;&#x09;"/>
 			<item value="&#x09;Data () {"/>
