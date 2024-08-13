@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="&#x09;Data (int diaInicial, int mesInicial, int anoInicial) {"/>
+		<item key="selection" value="public boolean equals(Object objeto) {"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="public boolean equals(Object objeto) {"/>
+			<item value="&#x09;&#x09;if( objeto instanceof Usuarios) {"/>
 			<item value="notas"/>
 			<item value="&#x09;Data (int diaInicial, int mesInicial, int anoInicial) {"/>
 			<item value="&#x09;&#x09;"/>
 			<item value="&#x09;Data () {"/>
 			<item value="p1.nome = &quot;sapato&quot;;"/>
 			<item value="&#x09;&#x09;default:"/>
-			<item value="&#x09;&#x09;while( valor != minimo) {"/>
-			<item value="&#x09;&#x09;String valor = &quot;#&quot;;"/>
-			<item value="&#x09;&#x09;while( valor != &quot;####&quot;) {"/>
 		</list>
 		<list key="replacehistory">
 		</list>
