@@ -16,6 +16,7 @@ public class Main {
 
         System.out.println("Duração do filme: " + meuFilme.getDuracaoEmMinutos());
 
+
         meuFilme.exibeFichaTecnica();
         meuFilme.avalia(8);
         meuFilme.avalia(5);
@@ -80,4 +81,5 @@ public class Main {
         retangulo.resultado();
 
     }
+
 }
