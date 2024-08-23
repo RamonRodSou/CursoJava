@@ -1,4 +1,7 @@
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
+import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
+import br.com.alura.screenmatch.exercicios.CalculadoraSalaRetangular;
+import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Film;//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 import br.com.alura.screenmatch.modelos.Serie;
 
@@ -54,6 +57,27 @@ public class Main {
 
         System.out.println("Somando o tempo dos filmes/série: " + calculadora.getTempoTotal() + " minutos");
 
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+
+        filtro.filtra(meuFilme);
+
+        Episodio episodio = new Episodio();
+
+        episodio.setNumero(1);
+        episodio.setNome("As as venturas do Principal");
+        episodio.setSerie(s1);
+        episodio.setTotalDeAvaliacao(300);
+
+        filtro.filtra(episodio);
+
+        CalculadoraSalaRetangular retangulo = new CalculadoraSalaRetangular();
+
+        retangulo.setAltura(10.0);
+        retangulo.setBase(5.0);
+        retangulo.calcularArea();
+        retangulo.getBase();
+
+        retangulo.resultado();
 
     }
 }
