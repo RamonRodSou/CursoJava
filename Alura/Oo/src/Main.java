@@ -5,37 +5,59 @@ import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Film;//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 import br.com.alura.screenmatch.modelos.Serie;
 
+import java.util.ArrayList;
+
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
 
-        Film meuFilme = new Film();
-        meuFilme.setNome ("O poderoso chefão");
-        meuFilme.setAnoDeLancamento (1970);
-        meuFilme.setDuracaoEmMinutos (180);
+        Film f1 = new Film();
+        f1.setNome ("O poderoso chefão");
+        f1.setAnoDeLancamento (1970);
+        f1.setDuracaoEmMinutos (180);
 
-        System.out.println("Duração do filme: " + meuFilme.getDuracaoEmMinutos());
+        System.out.println("Duração do filme: " + f1.getDuracaoEmMinutos());
 
+        f1.exibeFichaTecnica();
+        f1.avalia(8);
+        f1.avalia(5);
+        f1.avalia(10);
 
-        meuFilme.exibeFichaTecnica();
-        meuFilme.avalia(8);
-        meuFilme.avalia(5);
-        meuFilme.avalia(10);
+        System.out.println("Total de avaliaçôes" + f1.getTotalDeAvaliacoes());
+        System.out.println(f1.pegaMedia());
 
-        System.out.println("Total de avaliaçôes" + meuFilme.getTotalDeAvaliacoes());
-        System.out.println(meuFilme.pegaMedia());
+        System.out.println("-----------------------------");
 
         Film f2 = new Film();
         f2.setNome("Coração");
         f2.setDuracaoEmMinutos(120);
         f2.setAnoDeLancamento(2000);
 
+        f2.exibeFichaTecnica();
         System.out.println("-----------------------------");
 
-        // nao s epode deixar alterar direto assim precisa de mais segurança, tem que deixar privado
-        //meuFilme.somaDasAvalicoes = 10;
-        //meuFilme.totalDeAvaliacoes = 1;
-        //System.out.println(meuFilme.pegaMedia());
+
+        var f3 = new Film();
+        f3.setNome("A Liga da Faxina");
+        f3.setDuracaoEmMinutos(114);
+        f3.setAnoDeLancamento(2020);
+
+        f3.exibeFichaTecnica();
+
+        System.out.println("-----------------------------");
+
+
+
+
+
+// ----------------------------------------------------------------------------------------------------
+
+        // nao se pode deixar alterar direto assim precisa de mais segurança, tem que deixar privado
+        //f1.somaDasAvalicoes = 10;
+        //f1.totalDeAvaliacoes = 1;
+        //System.out.println(f1.pegaMedia());
+
+// ----------------------------------------------------------------------------------------------------
 
 
         Serie s1 = new Serie();
@@ -52,18 +74,16 @@ public class Main {
 
 
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
-        calculadora.inclui(meuFilme);
+        calculadora.inclui(f1);
         calculadora.inclui(f2);
         calculadora.inclui(s1);
 
         System.out.println("Somando o tempo dos filmes/série: " + calculadora.getTempoTotal() + " minutos");
 
         FiltroRecomendacao filtro = new FiltroRecomendacao();
-
-        filtro.filtra(meuFilme);
+        filtro.filtra(f1);
 
         Episodio episodio = new Episodio();
-
         episodio.setNumero(1);
         episodio.setNome("As as venturas do Principal");
         episodio.setSerie(s1);
@@ -71,14 +91,32 @@ public class Main {
 
         filtro.filtra(episodio);
 
-        CalculadoraSalaRetangular retangulo = new CalculadoraSalaRetangular();
+        System.out.println("-----------------------------");
 
-        retangulo.setAltura(10.0);
-        retangulo.setBase(5.0);
-        retangulo.calcularArea();
-        retangulo.getBase();
 
-        retangulo.resultado();
+        ArrayList <Film> listaDeFilme = new ArrayList<>();
+        listaDeFilme.add(f1);
+        listaDeFilme.add(f2);
+        listaDeFilme.add(f3);
+
+        int tamanho = listaDeFilme.size();
+        System.out.println("Tamanho da lista: " + tamanho);
+        System.out.println("Primeiro filme: " + listaDeFilme.get(0).getNome());
+
+        // Re-escrever o toString na classe Film
+        System.out.println(listaDeFilme.toString());
+
+        // nao precisaria usar um for, e sim o toString re-escrito.
+
+        for( int i = 0; i < tamanho ; i++){
+            System.out.println( i + " Nome do Filme " + listaDeFilme.get(i).getNome() );
+        }
+
+        System.out.println("-----------------------------");
+
+        for( Film u: listaDeFilme) {
+            System.out.println( "Nome do Filme " + u.getNome() );
+        }
 
     }
 

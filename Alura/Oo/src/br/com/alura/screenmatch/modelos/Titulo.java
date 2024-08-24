@@ -9,7 +9,7 @@ public class Titulo {
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
 
-    public String getNome(String cobraKai) {
+    public String getNome() {
         return nome;
     }
 
