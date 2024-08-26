@@ -11,10 +11,10 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-        Film f1 = new Film();
-        f1.setNome ("O poderoso chefão");
-        f1.setAnoDeLancamento (1970);
-        f1.setDuracaoEmMinutos (180);
+        Film f1 = new Film("O poderoso chefão", 1970, 180, true, 98.2, 10);
+        //f1.setNome ("O poderoso chefão");
+        //f1.setAnoDeLancamento (1970);
+        //f1.setDuracaoEmMinutos (180);
 
         System.out.println("Duração do filme: " + f1.getDuracaoEmMinutos());
 
@@ -25,32 +25,21 @@ public class Main {
 
         System.out.println("Total de avaliaçôes" + f1.getTotalDeAvaliacoes());
         System.out.println(f1.pegaMedia());
-
         System.out.println("-----------------------------");
 
-        Film f2 = new Film();
-        f2.setNome("Coração");
-        f2.setDuracaoEmMinutos(120);
-        f2.setAnoDeLancamento(2000);
-
+        Film f2 = new Film("Coração",120, 2000, true, 58.21, 10);
         f2.exibeFichaTecnica();
         System.out.println("-----------------------------");
 
-
-        var f3 = new Film();
-        f3.setNome("A Liga da Faxina");
-        f3.setDuracaoEmMinutos(114);
-        f3.setAnoDeLancamento(2020);
-
+        var f3 = new Film("A Liga da Faxina", 114, 2020, true, 88.8, 10);
         f3.exibeFichaTecnica();
-
         System.out.println("-----------------------------");
 
+        System.out.println("Usando construtores");
+        var f4 = new Film("Homem Aranha",136, 2001, false, 92.2, 10);
 
 
-
-
-// ----------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------
 
         // nao se pode deixar alterar direto assim precisa de mais segurança, tem que deixar privado
         //f1.somaDasAvalicoes = 10;
@@ -60,13 +49,7 @@ public class Main {
 // ----------------------------------------------------------------------------------------------------
 
 
-        Serie s1 = new Serie();
-        s1.setNome("Cobra Kai");
-        s1.setAtiva(true);
-        s1.setTemporada(4);
-        s1.setEpisodioPorTemporada(10);
-        s1.setMinutosPorEpisodio(28.40);
-        s1.setAnoDeLancamento(2020);
+        Serie s1 = new Serie("Cobra Kai", 2000, 4, false, 28.40,2020);
         System.out.println("Duração para maratonar Cobra Kai : " + s1.getDuracaoEmMinutos() + " minutos");
         s1.exibeFichaTecnica();
 

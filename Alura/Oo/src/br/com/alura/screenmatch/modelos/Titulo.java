@@ -9,6 +9,17 @@ public class Titulo {
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
 
+    public Titulo(String nome, int anoDeLancamento, double duracaoEmMinutos, boolean incluidoNoPlano, double somaDasAvaliacoes, int totalDeAvaliacoes) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+        this.duracaoEmMinutos = duracaoEmMinutos;
+        this.incluidoNoPlano = incluidoNoPlano;
+        this.somaDasAvaliacoes = somaDasAvaliacoes;
+        this.totalDeAvaliacoes = totalDeAvaliacoes;
+    }
+
+
+
     public String getNome() {
         return nome;
     }
