@@ -1,6 +1,7 @@
+package br.com.alura.principal;
+
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
-import br.com.alura.screenmatch.exercicios.CalculadoraSalaRetangular;
 import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Film;//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 import br.com.alura.screenmatch.modelos.Serie;
@@ -35,9 +36,15 @@ public class Main {
         f3.exibeFichaTecnica();
         System.out.println("-----------------------------");
 
-        System.out.println("Usando construtores");
+       // System.out.println("Usando construtores");
         var f4 = new Film("Homem Aranha",136, 2001, false, 92.2, 10);
+        var f5 = new Film("Homem Aranha",136, 2001, false, 92.2, 10);
 
+
+        System.out.println(f4 == f5);
+        System.out.println(f4.equals(f5));
+
+        System.out.println("-----------------------------");
 
 // ---------------------------------------------------------------------------------------------------
 
@@ -101,6 +108,8 @@ public class Main {
             System.out.println( "Nome do Filme " + u.getNome() );
         }
 
+
     }
+
 
 }

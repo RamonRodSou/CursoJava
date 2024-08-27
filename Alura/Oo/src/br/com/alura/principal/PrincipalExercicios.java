@@ -1,8 +1,10 @@
-package br.com.alura.screenmatch.exercicios;
+package br.com.alura.principal;
+
+import br.com.alura.screenmatch.exercicios.Pessoa;
 
 import java.util.ArrayList;
 
-public class Pricipal {
+public class PrincipalExercicios {
 
     public static void main(String[] args) {
         Pessoa p1 = new Pessoa();
@@ -30,6 +32,8 @@ public class Pricipal {
         System.out.println("Nome do Pai: " + rodrigues.get(0));
         System.out.println("Quantos membros tem na fámiia " + rodrigues.size());
         System.out.println("Familia Rodrigues: " + rodrigues.toString());
+
+
     }
 
 }

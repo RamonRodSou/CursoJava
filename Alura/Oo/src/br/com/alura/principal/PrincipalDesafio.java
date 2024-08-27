@@ -1,5 +1,9 @@
-package br.com.alura.minhasMusicas;
+package br.com.alura.principal;
 
+
+import br.com.alura.minhasMusicas.MinhasPreferidas;
+import br.com.alura.minhasMusicas.Musica;
+import br.com.alura.minhasMusicas.PodCast;
 
 public class PrincipalDesafio {
     public static void main(String[] args) {
