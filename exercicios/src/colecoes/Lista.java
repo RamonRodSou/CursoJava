@@ -1,13 +1,14 @@
 package colecoes;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Lista {
 
 	public static void main(String[] args) {
 		
-		List<Usuario> lista = new ArrayList<>();
+		List<Usuario> lista = new LinkedList<>();
 		
 		Usuario u1 = new Usuario ("Ramon");
 		
