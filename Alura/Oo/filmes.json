@@ -1,0 +1,26 @@
+[
+  {
+    "Nome": "Matrix",
+    "AnoDeLancamento": 199,
+    "IncluidoNoPlano": false,
+    "SomaDasAvaliacoes": 0.0,
+    "TotalDeAvaliacoes": 0,
+    "DuracaoEmMinutos": 60
+  },
+  {
+    "Nome": "Dogville",
+    "AnoDeLancamento": 200,
+    "IncluidoNoPlano": false,
+    "SomaDasAvaliacoes": 0.0,
+    "TotalDeAvaliacoes": 0,
+    "DuracaoEmMinutos": 17
+  },
+  {
+    "Nome": "Top Gun",
+    "AnoDeLancamento": 198,
+    "IncluidoNoPlano": false,
+    "SomaDasAvaliacoes": 0.0,
+    "TotalDeAvaliacoes": 0,
+    "DuracaoEmMinutos": 10
+  }
+]

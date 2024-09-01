@@ -1,11 +1,11 @@
 package br.com.alura.comsumindoApi.modelos;
 
+import br.com.alura.comsumindoApi.exececao.ErroDeConversaoDeAnoException;
 import com.google.gson.annotations.SerializedName;
 
 public class Titulo implements Comparable<Titulo> {
-    @SerializedName("Title")
+
     private String nome;
-    @SerializedName("Year")
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
@@ -16,6 +16,21 @@ public class Titulo implements Comparable<Titulo> {
     public Titulo(String nome, int anoDeLancamento) {
         this.nome = nome;
         this.anoDeLancamento = anoDeLancamento;
+    }
+
+    public Titulo(TituloOmdb meuTituloOmdb) {
+        this.nome = meuTituloOmdb.title();
+
+        if (meuTituloOmdb.year().length() > 4){
+            throw new ErroDeConversaoDeAnoException("Não consegui converter o ano, porque tem mais de 04 caractere");
+        }
+        this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0,2));
+        this.anoDeLancamento = Integer.parseInt(meuTituloOmdb.year().substring(0,3));
+
+        //this.duracaoEmMinutos = Integer.parseInt(meuTituloOmdb.runtime().substring(0,2));
+
+
+
     }
 
     public String getNome() {
@@ -75,7 +90,6 @@ public class Titulo implements Comparable<Titulo> {
 
     @Override
     public String toString() {
-        return "Titulo " + nome +
-                " - anoDeLancamento: " + anoDeLancamento;
+        return "( Filme: " + nome + ", ano de lançamento: " + anoDeLancamento +  ", duração: " + duracaoEmMinutos + " minutos. ) " ;
     }
 }
