@@ -6,7 +6,9 @@ import br.com.alura.series.model.DadosTemporada;
 import br.com.alura.series.service.ConsumoAPI;
 import br.com.alura.series.service.ConverteDados;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -50,7 +52,20 @@ public class Principal {
 //        }
 
 //      Refatorando usando Lambdas " -> " Funções Anonimas
+//      temporada.forRach ((parametro) -> expressao ) parametro sao a representacao de uma temporada
         temporadas.forEach(t -> t.episodios().forEach(e -> System.out.println(e.titulo())));
+
+        // Stream é um fluxo de dados  ( cada temporada, cada episodio ) sao fluxos de dados
+        // Executa operacoes intermediarias, consigo fazer varias operacoes dentro do stream
+        List<String> nomes = Arrays.asList("Ramon", "Samara", "Antonio", "Eloisa", "Hilda", "Selma");
+
+        nomes.stream()
+                .sorted()
+                .limit(5)
+                .map(s -> s.replace("Samara", "Mamae"))
+                .map(s -> s.replace("Ramon", "Papai"))
+                .map(String::toUpperCase)
+                .forEach(System.out::println);
 
     }
 }
