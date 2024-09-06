@@ -6,11 +6,11 @@ import br.com.alura.series.model.DadosTemporada;
 import br.com.alura.series.service.ConsumoAPI;
 import br.com.alura.series.service.ConverteDados;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Principal {
 
@@ -57,15 +57,28 @@ public class Principal {
 
         // Stream é um fluxo de dados  ( cada temporada, cada episodio ) sao fluxos de dados
         // Executa operacoes intermediarias, consigo fazer varias operacoes dentro do stream
-        List<String> nomes = Arrays.asList("Ramon", "Samara", "Antonio", "Eloisa", "Hilda", "Selma");
 
-        nomes.stream()
-                .sorted()
+//        List<String> nomes = Arrays.asList("Ramon", "Samara", "Antonio", "Eloisa", "Hilda", "Selma");
+//
+//        nomes.stream()
+//                .sorted()
+//                .limit(5)
+//                .map(s -> s.replace("Samara", "Mamae"))
+//                .map(s -> s.replace("Ramon", "Papai"))
+//                .map(String::toUpperCase)
+//                .forEach(System.out::println);
+
+
+        List<DadosEpisodio> dadosEpisodios = temporadas.stream()
+                .flatMap(t ->  t.episodios().stream())
+                .collect(Collectors.toList()); // .toList();   // coleção imutavel, nao consigo add nada novo
+
+
+        System.out.println("\n Top 5 episódios");
+        dadosEpisodios.stream()
+                .filter(e -> !e.avaliacao().equalsIgnoreCase("N/A"))
+                .sorted(Comparator.comparing(DadosEpisodio::avaliacao).reversed())
                 .limit(5)
-                .map(s -> s.replace("Samara", "Mamae"))
-                .map(s -> s.replace("Ramon", "Papai"))
-                .map(String::toUpperCase)
                 .forEach(System.out::println);
-
     }
 }
