@@ -9,10 +9,7 @@ import br.com.alura.series.service.ConverteDados;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Principal {
@@ -77,20 +74,33 @@ public class Principal {
                 .collect(Collectors.toList()); // .toList();   // coleção imutavel, nao consigo add nada novo
 
 
-//        System.out.println("\n Top 5 episódios");
-//        dadosEpisodios.stream()
-//                .filter(e -> !e.avaliacao().equalsIgnoreCase("N/A"))
-//                .sorted(Comparator.comparing(DadosEpisodio::avaliacao).reversed())
-//                .limit(5)
-//                .forEach(System.out::println);
-//
-//        List<Episodio> episodios = temporadas.stream()
-//                .flatMap(t -> t.episodios().stream()
-//                        .map( d -> new Episodio(t.numero(), d))
-//                ).collect(Collectors.toList());
-//
-//        episodios.forEach(System.out::println);
-//
+        System.out.println("\n Top 5 episódios");
+        dadosEpisodios.stream()
+                .filter(e -> !e.avaliacao().equalsIgnoreCase("N/A"))
+                .sorted(Comparator.comparing(DadosEpisodio::avaliacao).reversed())
+                .limit(5)
+                .forEach(System.out::println);
+
+        List<Episodio> episodios = temporadas.stream()
+                .flatMap(t -> t.episodios().stream()
+                        .map( d -> new Episodio(t.numero(), d))
+                ).collect(Collectors.toList());
+
+        episodios.forEach(System.out::println);
+
+        System.out.println("Digite um trecho do título do episódio:");
+        var trechoTitulo = entrada.nextLine();
+        Optional<Episodio> episodioBuscado = episodios.stream()
+                .filter(e -> e.getTitulo().toUpperCase().contains(trechoTitulo.toUpperCase()))
+                .findFirst();
+
+        if(episodioBuscado.isPresent()){
+            System.out.println("Episodio encontrado!");
+            System.out.println("Temporada: " + episodioBuscado.get().getTemporada());
+        }else {
+            System.out.println("Episodio não encontrado");
+        }
+
 //        System.out.println("A partir de que ano você deseja ver os episódios? ");
 //        var ano = entrada.nextInt();
 //        entrada.nextLine();
@@ -105,24 +115,25 @@ public class Principal {
 //                                " Eposódio: " + e.getTemporada() +
 //                                " Data Lançamento: " + e.getDataLancamento().format(formatador)
 //                ));
+//
+//
+//
+////      Verificando se ha book,. usando o PEEK para comentar cada etapada da stream
+//        System.out.println("\n Top 5 episódios");
+//        dadosEpisodios.stream()
+//                .filter(e -> !e.avaliacao().equalsIgnoreCase("N/A"))
+//                .peek(e -> System.out.println("1- Verificar se nao tem nenhum com a avaliacao N/A " + e))
+//                .sorted(Comparator.comparing(DadosEpisodio::avaliacao).reversed())
+//                .peek(e -> System.out.println("2- Ordenando " + e))
+//                .limit(5)
+//                .peek(e -> System.out.println("3- Limite de 5 " + e))
+//                .map(e -> e.titulo().toUpperCase())
+//                .peek(e -> System.out.println("4- Mapeamento para letras maiusculas " + e))
+//
+//                .forEach(System.out::println);
 
 
-
-//      Verificando se ha book,. usando o PEEK para comentar cada etapada da stream
-        System.out.println("\n Top 5 episódios");
-        dadosEpisodios.stream()
-                .filter(e -> !e.avaliacao().equalsIgnoreCase("N/A"))
-                .peek(e -> System.out.println("1- Verificar se nao tem nenhum com a avaliacao N/A " + e))
-                .sorted(Comparator.comparing(DadosEpisodio::avaliacao).reversed())
-                .peek(e -> System.out.println("2- Ordenando " + e))
-                .limit(5)
-                .peek(e -> System.out.println("3- Limite de 5 " + e))
-                .map(e -> e.titulo().toUpperCase())
-                .peek(e -> System.out.println("4- Mapeamento para letras maiusculas " + e))
-
-                .forEach(System.out::println);
 
     }
-
 
 }
