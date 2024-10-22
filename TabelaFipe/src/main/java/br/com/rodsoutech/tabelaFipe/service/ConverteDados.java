@@ -19,10 +19,14 @@ public class ConverteDados implements IConverteDados {
     }
 
     @Override
-    public <T> List<T> obterListd(String json, Class<T> classe) {
+    public <T> List<T> obterLista(String json, Class<T> classe) {
         CollectionType lista = mapper.getTypeFactory()
                 .constructCollectionType(List.class, classe);
-        return List.of();
+        try {
+            return mapper.readValue(json, lista);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }

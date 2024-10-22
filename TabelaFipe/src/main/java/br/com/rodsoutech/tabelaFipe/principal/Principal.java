@@ -1,13 +1,17 @@
 package br.com.rodsoutech.tabelaFipe.principal;
 
+import br.com.rodsoutech.tabelaFipe.model.Dados;
 import br.com.rodsoutech.tabelaFipe.service.ComsumoAPI;
+import br.com.rodsoutech.tabelaFipe.service.ConverteDados;
 
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Principal {
 
     private Scanner entrada = new Scanner(System.in);
     private ComsumoAPI consumo = new ComsumoAPI();
+    private ConverteDados conversor = new ConverteDados();
 
     private final String URL_BASE = "https://parallelum.com.br/fipe/api/v1/";
 
@@ -41,5 +45,16 @@ public class Principal {
 
             var json = consumo.obterDados(endereco);
             System.out.println(json);
+
+            var marcas = conversor.obterLista(json, Dados.class);
+            marcas.stream()
+                    .sorted(Comparator.comparing(Dados::codigo)) // ordenar pelo código
+                    .forEach(System.out::println);
+
+            System.out.println("Informe o código da marca para consulta:");
+            String codigoMarca = entrada.nextLine();
+
+            endereco = URL_BASE + "motos/marcas/" + codigoMarca + "/modelos";
+
         }
 }
