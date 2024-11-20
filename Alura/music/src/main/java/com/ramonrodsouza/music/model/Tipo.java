@@ -4,6 +4,7 @@ public enum Tipo {
 
     SOLO,
     DUPLA,
-    BANDA
+    BANDA;
 
 }
+

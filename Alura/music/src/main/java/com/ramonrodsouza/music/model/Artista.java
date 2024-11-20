@@ -12,6 +12,8 @@ public class Artista {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(unique = true)
     private String nome;
 
     @Enumerated(EnumType.STRING)
@@ -20,8 +22,16 @@ public class Artista {
     @Enumerated(EnumType.STRING)
     private Genero genero;
 
-    @OneToMany(mappedBy = "musica", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "artista", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Musica> musicas = new ArrayList<>();
+
+    public Artista(){}
+
+    public Artista(String artistaNome, Tipo tipo, Genero genero) {
+        this.nome = artistaNome;
+        this.tipo = tipo;
+        this.genero = genero;
+    }
 
     public Long getId() {
         return id;
@@ -61,5 +71,14 @@ public class Artista {
 
     public void setMusicas(List<Musica> musicas) {
         this.musicas = musicas;
+    }
+
+    @Override
+
+    public String toString() {
+        return "Artista " + tipo +
+                ", nome= " + nome +
+                ", genero= " + genero +
+                ", musicas= " + musicas;
     }
 }

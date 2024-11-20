@@ -2,7 +2,6 @@ package com.ramonrodsouza.music.model;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "musicas")
@@ -11,13 +10,17 @@ public class Musica {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true)
     private String nome;
-    private Double duracao;
-    private Double avaliacao;
-    private LocalDate dataLancamento;
 
     @ManyToOne
     private Artista artista;
+
+    public Musica(){}
+
+    public Musica(String musicaNome) {
+        this.nome = musicaNome;
+    }
 
     public Long getId() {
         return id;
@@ -35,30 +38,6 @@ public class Musica {
         this.nome = nome;
     }
 
-    public Double getDuracao() {
-        return duracao;
-    }
-
-    public void setDuracao(Double duracao) {
-        this.duracao = duracao;
-    }
-
-    public Double getAvaliacao() {
-        return avaliacao;
-    }
-
-    public void setAvaliacao(Double avaliacao) {
-        this.avaliacao = avaliacao;
-    }
-
-    public LocalDate getDataLancamento() {
-        return dataLancamento;
-    }
-
-    public void setDataLancamento(LocalDate dataLancamento) {
-        this.dataLancamento = dataLancamento;
-    }
-
     public Artista getArtista() {
         return artista;
     }
@@ -70,9 +49,6 @@ public class Musica {
     @Override
     public String toString() {
         return "Musica: " + nome +
-                " Artista:" + artista +
-                " Duração: " + duracao +
-                " Avaliação: " + avaliacao +
-                " Data de lançamento: " + dataLancamento;
+                " Artista:" + artista.getNome();
     }
 }
